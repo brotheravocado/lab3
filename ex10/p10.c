@@ -144,8 +144,6 @@ void main(int argc, char* argv[])
     exit(1);
   }
 }
-
-
 void p(sem_t *semd) {
   int ret;
   if ((ret = sem_trywait(semd)) != 0 && errno == EAGAIN)
@@ -159,7 +157,6 @@ void v(sem_t *semd) {
   if (sem_post(semd) != 0) {
     perror ("sem_post failed");
     exit (1);
-    
   }
 }
 
